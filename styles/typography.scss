@@ -1,0 +1,23 @@
+@mixin Typography($font-size, $font-weight, $line-height, $letter-spacing, $font-family) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  font-family: $font-family;
+}
+
+@mixin HeadingM {
+  @include Typography(32px, 700, 150%, 0, var(--instrument-sans-font));
+}
+
+@mixin HeadingS {
+  @include Typography(16px, 600, 150%, 0, var(--instrument-sans-font));
+}
+
+@mixin BodyM {
+  @include Typography(16px, 400, 150%, 0, var(--instrument-sans-font));
+}
+
+@mixin BodyS {
+  @include Typography(12px, 400, 150%, 0, var(--instrument-sans-font));
+}
