@@ -1,0 +1,9 @@
+@import 'styles/typography';
+
+.medium {
+  @include HeadingM;
+}
+
+.small {
+  @include HeadingS;
+}

@@ -1,0 +1,13 @@
+@import "styles/typography";
+
+.paragraph {
+  color: var(--color-grey);
+}
+
+.medium {
+  @include BodyM;
+}
+
+.small {
+  @include BodyS;
+}
