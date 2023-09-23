@@ -1,0 +1,20 @@
+@import "styles/typography";
+
+.text {
+
+  &.primary {
+    color: var(--color-primary);
+  }
+
+  &.danger {
+    color: var(--color-danger);
+  }
+
+  &.small {
+    @include BodyS;
+  }
+
+  &.medium {
+    @include BodyM;
+  }
+}
