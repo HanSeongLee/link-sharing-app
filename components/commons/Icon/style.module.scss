@@ -1,0 +1,29 @@
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &.primary {
+    svg path {
+      fill: var(--color-primary);
+    }
+  }
+
+  &.grey {
+    svg path {
+      fill: var(--color-grey);
+    }
+  }
+
+  &.white {
+    svg path {
+      fill: var(--color-white);
+    }
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
