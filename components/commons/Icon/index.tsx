@@ -28,16 +28,8 @@ import TwitterIcon from 'public/icons/icon-twitter.svg';
 import UploadImageIcon from 'public/icons/icon-upload-image.svg';
 import YoutubeIcon from 'public/icons/icon-youtube.svg';
 
-interface IProps extends HTMLAttributes<HTMLSpanElement> {
-    name:
-        'arrow-right' | 'changes-saved' | 'chevron-down' | 'codepen' |
-        'codewars' | 'devto' | 'drag-and-drop' | 'email' | 'facebook' |
-        'freecodecamp' | 'frontend-mentor' | 'github' | 'gitlab' |
-        'hashnode' | 'link' | 'link-copied-to-clipboard' | 'linkedin' |
-        'links-header' | 'password' | 'preview-header' | 'profile-details-header' |
-        'stackoverflow' | 'twitch' | 'twitter' | 'upload-image' | 'youtube';
-    size?: number;
-    color?: 'primary' | 'grey' | 'white' | 'default';
+interface IProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'color'>, IIcon {
+
 }
 
 const Icon: React.FC<IProps> = ({
