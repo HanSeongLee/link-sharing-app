@@ -1,0 +1,43 @@
+@import "styles/typography";
+
+.button {
+  @include HeadingS;
+
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 27px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+
+  &.primary {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-primary-hover);
+      box-shadow: 0 0 32px 0 rgba(99, 60, 255, 0.25);
+    }
+  }
+
+  &.secondary {
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-ligten-purple);
+    }
+  }
+
+  &.link {
+    @include BodyM;
+
+    color: var(--color-grey);
+    padding: 0;
+  }
+}
