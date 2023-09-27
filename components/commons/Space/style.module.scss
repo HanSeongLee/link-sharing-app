@@ -1,0 +1,14 @@
+@import "styles/utils";
+
+.space {
+  display: flex;
+  gap: var(--responsive-gap-row-sm, 0) var(--responsive-gap-column-sm, 0);
+
+  @include media(">tablet") {
+    gap: var(--responsive-gap-row-md, 0) var(--responsive-gap-column-md, 0);
+  }
+
+  @include media(">desktop") {
+    gap: var(--responsive-gap-row-lg, 0) var(--responsive-gap-column-lg, 0);
+  }
+}
