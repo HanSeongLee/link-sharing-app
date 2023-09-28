@@ -51,7 +51,7 @@
       box-shadow: 0 0 32px 0 rgba(99, 60, 255, 0.25);
     }
 
-    &:invalid {
+    &:not(:placeholder-shown):not(:focus):invalid {
       color: var(--color-danger);
       border-color: var(--color-danger);
 
