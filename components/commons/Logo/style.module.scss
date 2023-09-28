@@ -2,6 +2,21 @@
 .logo {
   display: inline-block;
 
+  &.small img {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.medium img {
+    width: 146px;
+    height: 32px;
+  }
+
+  &.large img {
+    width: 182.5px;
+    height: 40px;
+  }
+
   h1 {
     display: inherit;
   }
