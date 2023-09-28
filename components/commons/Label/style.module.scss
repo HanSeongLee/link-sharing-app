@@ -1,0 +1,9 @@
+@import "styles/typography";
+
+.label {
+  @include BodyS;
+
+  &.required::after {
+    content: "*";
+  }
+}
