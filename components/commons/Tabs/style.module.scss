@@ -1,0 +1,51 @@
+@import "styles/utils";
+@import "styles/typography";
+
+.tabs {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+
+  .item {
+
+    &.active .tabButton {
+      background-color: var(--color-lighten-purple);
+      color: var(--color-primary);
+    }
+  }
+
+  .tabButton {
+    @include HeadingS;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-grey);
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 27px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    svg path {
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      color: var(--color-primary);
+
+      svg path {
+        fill: var(--color-primary);
+      }
+    }
+  }
+
+  .label {
+    display: none;
+
+    @include media(">tablet") {
+      display: inline;
+    }
+  }
+}
