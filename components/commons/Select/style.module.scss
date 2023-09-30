@@ -74,6 +74,14 @@
       svg path {
         fill: var(--color-primary);
       }
+
+      svg path[fill='#737373'] {
+        fill: var(--color-primary);
+      }
+
+      svg path[fill='#fff'] {
+        fill: var(--color-white);
+      }
     }
 
     &:not(:last-child)::after {

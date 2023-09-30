@@ -8,17 +8,47 @@
     svg path {
       fill: var(--color-primary);
     }
+
+    &.devto {
+      svg path[fill='#737373'] {
+        fill: var(--color-primary);
+      }
+
+      svg path[fill='#fff'] {
+        fill: var(--color-white);
+      }
+    }
   }
 
   &.grey {
     svg path {
       fill: var(--color-grey);
     }
+
+    &.devto {
+      svg path[fill='#737373'] {
+        fill: var(--color-grey);
+      }
+
+      svg path[fill='#fff'] {
+        fill: var(--color-white);
+      }
+    }
   }
 
   &.white {
-    svg path {
+    &:not(&.devto) svg path {
       fill: var(--color-white);
+    }
+
+    &.devto {
+      svg path[fill='#737373'] {
+        fill: var(--color-white);
+      }
+
+      svg path[fill='#fff'] {
+        fill: var(--color-dark-grey);
+      }
     }
   }
 

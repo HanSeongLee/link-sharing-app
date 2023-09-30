@@ -41,6 +41,7 @@ const Icon: React.FC<IProps> = ({
             [styles.primary]: color === 'primary',
             [styles.grey]: color === 'grey',
             [styles.white]: color === 'white',
+            [styles.devto]: name === 'devto',
         }, className)}
               style={{
                   width: `${size}px`,
