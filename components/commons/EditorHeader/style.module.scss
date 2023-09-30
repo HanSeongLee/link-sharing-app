@@ -1,0 +1,20 @@
+@import "styles/utils";
+
+.appHeader {
+  background-color: var(--color-white);
+  padding: 16px 16px 16px 24px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .previewButton {
+    display: flex;
+
+    @include media("<tablet") {
+      padding: 11px 16px;
+    }
+  }
+}
