@@ -12,6 +12,7 @@
 
   .previewButton {
     display: flex;
+    min-width: initial !important;
 
     @include media("<tablet") {
       padding: 11px 16px;

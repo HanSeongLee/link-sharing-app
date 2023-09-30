@@ -16,6 +16,7 @@
   }
 
   &.primary {
+    min-width: 159.5px;
     color: var(--color-white);
     background-color: var(--color-primary);
 
@@ -26,6 +27,7 @@
   }
 
   &.secondary {
+    min-width: 159.5px;
     color: var(--color-primary);
     border: 1px solid var(--color-primary);
 
