@@ -10,11 +10,19 @@
     color: var(--color-danger);
   }
 
+  &.default {
+    color: var(--color-grey);
+  }
+
   &.small {
     @include BodyS;
   }
 
   &.medium {
     @include BodyM;
+  }
+
+  &.strong {
+    font-weight: 700;
   }
 }
