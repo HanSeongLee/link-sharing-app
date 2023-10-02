@@ -1,0 +1,13 @@
+@import "styles/typography";
+
+.alert {
+  @include BodyM;
+
+  border-radius: 8px;
+  padding: 8px 12px;
+
+  &.error {
+    background-color: #fff2f0;
+    border: 1px solid #ffccc7;
+  }
+}
