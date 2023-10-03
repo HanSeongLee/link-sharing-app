@@ -5,14 +5,15 @@ import Icon from 'components/commons/Icon';
 import cn from 'classnames';
 import ClickAwayListener from 'components/commons/ClickAwayListener';
 
-interface IProps extends InputHTMLAttributes<HTMLInputElement> {
+interface IProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
     defaultValue?: string;
     options: IOption[];
+    onChange?: (value: string) => void;
 }
 
 const Select: React.FC<IProps> = ({
-                                      defaultValue, options, className, children,
-                                      ...props
+                                      defaultValue, options, onChange, className,
+                                      children, ...props
                                   }) => {
     const [open, setOpen] = React.useState(false);
     const [value, setValue] = useState<string | undefined>(defaultValue);
@@ -29,6 +30,7 @@ const Select: React.FC<IProps> = ({
     };
 
     const handleChange = (value: string) => {
+        onChange?.(value);
         setValue(value);
         toggleOpen();
     };
