@@ -1,0 +1,36 @@
+@import "styles/utils";
+
+.emptyUserLinkBox {
+  min-height: 357px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-lighten-grey);
+  border-radius: 12px;
+  padding: 20px;
+
+  @include media(">tablet") {
+    min-height: 489px;
+  }
+
+  @include media(">desktop") {
+    min-height: 449px;
+  }
+
+  .container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 488px;
+  }
+
+  .illustration {
+    width: 124.766px;
+    height: 80px;
+
+    @include media(">tablet") {
+      width: 249.533px;
+      height: 160px;
+      margin-bottom: 16px;
+    }
+  }
+}
