@@ -44,8 +44,8 @@ const Icon: React.FC<IProps> = ({
             [styles.devto]: name === 'devto',
         }, className)}
               style={{
-                  width: `${size}px`,
-                  height: `${size}px`,
+                  '--width': `${size}px`,
+                  '--height': `${size}px`,
               } as React.CSSProperties}
               {...props}
         >

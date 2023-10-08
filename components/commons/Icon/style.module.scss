@@ -1,5 +1,7 @@
 
 .icon {
+  width: var(--width);
+  height: var(--height);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -53,6 +55,7 @@
   }
 
   svg {
+    min-width: var(--width);
     width: 100%;
     height: auto;
   }
