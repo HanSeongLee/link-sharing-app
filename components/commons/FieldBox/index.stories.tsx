@@ -5,6 +5,7 @@ import Select from 'components/commons/Select';
 import Label from 'components/commons/Label';
 import Input from 'components/commons/Input';
 import { SOCIAL_LINKS } from 'constants/social-links';
+import { SocialPlatform } from 'types/social-link';
 
 const meta: Meta<typeof FieldBox> = {
     title: 'Components/FieldBox',
@@ -35,7 +36,7 @@ export const SocialLinkFieldBox: Story = {
                                 .map((key) => {
                                     return {
                                         value: key,
-                                        label: SOCIAL_LINKS[key as SocialPlatformType].name,
+                                        label: SOCIAL_LINKS[key as SocialPlatform].name,
                                         iconName: key as IconName,
                                     };
                                 })}
