@@ -1,0 +1,61 @@
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &.float {
+    position: fixed;
+    z-index: 999;
+  }
+
+  &.topLeft {
+    top: 40px;
+    left: 40px;
+  }
+
+  &.topCenter {
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.topRight {
+    top: 40px;
+    right: 40px;
+  }
+
+  &.bottomLeft {
+    bottom: 40px;
+    left: 40px;
+  }
+
+  &.bottomCenter {
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.bottomRight {
+    bottom: 40px;
+    right: 40px;
+  }
+
+  .enter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  .enterActive {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .exit {
+    opacity: 1;
+  }
+  .exitActive {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+  }
+}
