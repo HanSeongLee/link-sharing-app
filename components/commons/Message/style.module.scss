@@ -1,0 +1,20 @@
+@import "styles/typography";
+
+.message {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  background-color: var(--color-dark-grey);
+  border-radius: 12px;
+  padding: 16px 24px;
+
+  &.error {
+    background-color: var(--color-danger);
+  }
+
+  .content {
+    @include HeadingS;
+
+    color: var(--color-lighten-grey);
+  }
+}
