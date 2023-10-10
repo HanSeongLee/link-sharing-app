@@ -1,0 +1,32 @@
+@import "styles/typography";
+
+.socialButton {
+  @include BodyM;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 237px;
+  height: 56px;
+  color: var(--color-white);
+  background-color: #1A1A1A;
+  border-radius: 8px;
+  padding: 16px;
+
+  &.frontendMentor {
+    color: var(--color-dark-grey);
+    border: 1px solid var(--color-border);
+  }
+
+  &.small {
+    height: 44px;
+
+    .name {
+      @include BodyS;
+    }
+  }
+
+  .name {
+    flex: 1;
+  }
+}
