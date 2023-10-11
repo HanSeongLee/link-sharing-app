@@ -1,0 +1,68 @@
+@import "styles/utils";
+
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 560px;
+  min-height: 834px;
+  background-color: var(--color-white);
+  border-radius: 12px;
+
+  &.hideSocialLinkEmptyBox {
+    .socialButtonContainer {
+      width: 240px;
+      height: 308px;
+      background-color: var(--color-white);
+      padding: 0 1.5px;
+    }
+  }
+
+  .mockup {
+    position: relative;
+    min-width: 307px;
+    min-height: 631px;
+    background: url("/img/illustration-phone-mockup.svg") no-repeat center;
+  }
+
+  .avatar, .name, .email, .socialButtonContainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .avatar {
+    top: 64px;
+  }
+
+  .name {
+    top: 180px;
+    width: 100%;
+    max-width: 237px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    color: var(--color-dark-grey);
+    background-color: var(--color-white);
+    text-align: center;
+  }
+
+  .email {
+    top: 208px;
+    width: 100%;
+    max-width: 237px;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-grey);
+    background-color: var(--color-white);
+    text-align: center;
+  }
+
+  .socialButtonContainer {
+    top: 277px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+  }
+}
