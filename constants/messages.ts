@@ -6,4 +6,5 @@ export enum ERROR_MESSAGES {
 
 export enum INFO_MESSAGES {
     CHANGED_SAVE = `Your changes have been successfully saved!`,
+    COPY_LINK = `The link has been copied to your clipboard!`,
 }
