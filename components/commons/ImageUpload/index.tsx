@@ -3,6 +3,7 @@ import styles from './style.module.scss';
 import cn from 'classnames';
 import Icon from 'components/commons/Icon';
 import { useForwardRef } from 'hooks/useForwardRef';
+import { loadFileAsDataURL } from 'lib/utils';
 
 interface IProps extends InputHTMLAttributes<HTMLInputElement> {
 
@@ -25,16 +26,17 @@ const ImageUpload = React.forwardRef<HTMLInputElement, IProps>(({ defaultValue, 
         const file = event.target.files[0];
         setImage(null);
 
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                if (!e.target) {
-                    return;
-                }
-                setImage(e.target.result);
-            };
-            reader.readAsDataURL(file);
+        if (!file) {
+            return;
         }
+
+        loadFileAsDataURL(file, (e) => {
+            if (!e.target) {
+                return;
+            }
+
+            setImage(e.target.result);
+        });
     };
 
     return (

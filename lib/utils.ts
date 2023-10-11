@@ -5,3 +5,9 @@ export const fetcher = async <T>(...args: Parameters<typeof fetch>): Promise<T> 
     }
     return response.json() as Promise<T>;
 };
+
+export const loadFileAsDataURL = (file: File, onLoad: (event: ProgressEvent<FileReader>) => void) => {
+    const reader = new FileReader();
+    reader.onload = onLoad;
+    reader.readAsDataURL(file);
+};
