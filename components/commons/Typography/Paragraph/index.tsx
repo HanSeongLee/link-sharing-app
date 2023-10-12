@@ -4,6 +4,7 @@ import cn from 'classnames';
 
 interface IProps extends HTMLAttributes<HTMLParagraphElement> {
     size?: 'medium' | 'small';
+    align?: 'left' | 'center' | 'right';
 }
 
 const Paragraph: React.FC<IProps> = ({ size='medium', className, children, ...props }) => {
@@ -12,6 +13,9 @@ const Paragraph: React.FC<IProps> = ({ size='medium', className, children, ...pr
             [styles.medium]: size === 'medium',
             [styles.small]: size === 'small',
         }, className)}
+           style={{
+               textAlign: props.align,
+           }}
            {...props}
         >
             {children}
