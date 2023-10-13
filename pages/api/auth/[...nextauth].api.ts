@@ -29,6 +29,7 @@ export const authOptions = {
                     return {
                         id: user.id,
                         email: user.email,
+                        emailVerified: user.emailVerified,
                     };
                 }
 
@@ -70,6 +71,7 @@ export const authOptions = {
                 return {
                     id: newUser.id,
                     email: newUser.email,
+                    emailVerified: newUser.emailVerified,
                 };
             },
         })
@@ -100,6 +102,7 @@ export const authOptions = {
                 user: {
                     id: user.id,
                     email: user.email,
+                    emailVerified: user.emailVerified,
                 }
             };
         }

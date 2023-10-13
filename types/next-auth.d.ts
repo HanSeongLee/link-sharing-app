@@ -1,4 +1,5 @@
 import NextAuth, { DefaultSession } from "next-auth"
+import { ISODateString } from 'next-auth/src/core/types';
 
 declare module "next-auth" {
     /**
@@ -7,6 +8,7 @@ declare module "next-auth" {
     interface Session {
         user: {
             id: string;
-        } & DefaultSession["user"]
+            emailVerified: ISODateString;
+        } & DefaultSession['user'];
     }
 }
