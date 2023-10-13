@@ -1,17 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { withSentry } from '@sentry/nextjs';
-import S3 from 'aws-sdk/clients/s3';
 import { v4 as uuid } from 'uuid';
 import mime from 'mime-types';
 import { getServerSession } from 'next-auth';
 import { authOptions } from 'pages/api/auth/[...nextauth].api';
-
-const s3 = new S3({
-    region: process.env.AWS_S3_REGION as string,
-    accessKeyId: process.env.AWS_S3_ACCESS_KEY as string,
-    secretAccessKey: process.env.AWS_S3_SECRET as string,
-    signatureVersion: 'v4',
-});
+import { s3 } from 'lib/s3.client';
 
 async function handler(
     req: NextApiRequest,
@@ -35,9 +28,9 @@ async function handler(
 
         const extension = mime.extension(type);
         const fileParams = {
-            Bucket: process.env.AWS_S3_BUCKET as string,
+            Bucket: process.env.PROJECT_AWS_S3_BUCKET as string,
             Fields: {
-                key: `${process.env.AWS_S3_IMAGE_BUCKET_KEY}/${uuid()}.${extension}`,
+                key: `${process.env.PROJECT_AWS_S3_IMAGE_BUCKET_KEY}/${uuid()}.${extension}`,
                 ContentType: type,
             },
             Expires: 600,
