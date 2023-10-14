@@ -1,0 +1,26 @@
+@import "styles/utils";
+
+.page {
+
+  @include media(">tablet") {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 1024px;
+  }
+
+  .header {
+    padding: 32px 0 64px;
+
+    @include media(">tablet") {
+      text-align: center;
+      padding: 0 0 55px;
+    }
+  }
+
+  .container {
+    @include media(">desktop") {
+      max-width: 476px;
+    }
+  }
+}
