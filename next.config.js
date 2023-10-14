@@ -25,6 +25,15 @@ const nextConfig = {
     // for more information.
     hideSourceMaps: true,
   },
+  redirects: async () => {
+    return [
+      {
+        source: '/',
+        destination: '/editor',
+        permanent: false,
+      },
+    ]
+  }
 }
 
 module.exports = withSentryConfig(
