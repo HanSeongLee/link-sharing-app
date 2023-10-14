@@ -2,6 +2,7 @@ export enum ERROR_MESSAGES {
     REQUIRE_FILED = `Can't be empty`,
     PASSWORD_NOT_MATCH = `Please check again`,
     SOMETHING_WENT_WRONG = `Something went wrong. Please try again!`,
+    INVALID_URL = `Please check the URL`,
 }
 
 export enum INFO_MESSAGES {

@@ -1,0 +1,84 @@
+@import "styles/typography";
+@import "styles/utils";
+
+.form {
+  background-color: var(--color-white);
+  border-radius: 12px;
+
+  @include media(">tablet") {
+    min-height: 874px;
+  }
+
+  & > div:first-child {
+    padding: 24px 24px 0;
+
+    @include media(">tablet") {
+      padding: 40px 40px 0;
+    }
+  }
+
+  .content {
+    padding: 0 24px;
+
+    @include media(">tablet") {
+      padding: 0 40px 16px;
+    }
+  }
+
+  .box {
+    background-color: var(--color-lighten-grey);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .field {
+
+    @include media(">tablet") {
+      flex-direction: row !important;
+      align-items: center;
+
+      .label {
+        @include BodyM;
+
+        min-width: 240px;
+        color: var(--color-grey);
+      }
+
+      label {
+        margin-right: 12px;
+      }
+
+      .input {
+        width: 100%;
+      }
+    }
+  }
+
+  .description {
+
+    @include media(">tablet") {
+      max-width: 127px;
+    }
+  }
+
+  .footer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .buttonContainer {
+    padding: 16px;
+
+    @include media(">tablet") {
+      display: flex;
+      align-items: flex-end;
+      padding: 24px 40px;
+
+      .button {
+        min-width: 46px;
+      }
+    }
+  }
+}

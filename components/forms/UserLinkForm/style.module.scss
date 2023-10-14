@@ -1,0 +1,64 @@
+@import "styles/utils";
+
+.form {
+  background-color: var(--color-white);
+  border-radius: 12px;
+
+  @include media(">tablet") {
+    min-height: 874px;
+  }
+
+  & > div:first-child {
+    padding: 24px 24px 0;
+
+    @include media(">tablet") {
+      padding: 40px 40px 0;
+    }
+  }
+
+  & > div:last-child {
+
+    @include media(">tablet") {
+      gap: 0 !important;
+    }
+  }
+
+  .content {
+    padding: 0 24px;
+
+    @include media(">tablet") {
+      height: 100%;
+      padding: 0 40px;
+    }
+  }
+
+  .fieldContainer {
+
+    @include media(">tablet") {
+      max-height: 550px;
+      height: 100%;
+      overflow: scroll;
+    }
+  }
+
+  .footer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .buttonContainer {
+    padding: 16px;
+
+    @include media(">tablet") {
+      display: flex;
+      align-items: flex-end;
+      padding: 24px 40px;
+
+      .button {
+        min-width: 46px;
+      }
+    }
+  }
+}
