@@ -1,0 +1,9 @@
+@import "styles/utils";
+
+.form {
+  @include media(">tablet") {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    padding: 40px;
+  }
+}
