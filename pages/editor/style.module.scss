@@ -1,0 +1,11 @@
+
+.page {
+  position: relative;
+  padding-bottom: 64px;
+
+  .editorHeaderContainer {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+}
