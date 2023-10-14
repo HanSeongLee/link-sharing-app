@@ -111,6 +111,9 @@ export const authOptions = {
         signIn: '/sign-in',
     },
     secret: process.env.AUTH_SECRET,
+    session: {
+        maxAge: 60 * 20, // 20 minutes
+    },
     jwt: {
         maxAge: 60 * 20, // 20 minutes
     },
