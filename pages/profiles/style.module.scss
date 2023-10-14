@@ -1,0 +1,40 @@
+@import "styles/utils";
+
+.page {
+  position: relative;
+
+  @include media(">tablet") {
+    min-height: 600px;
+  }
+
+  @include media(">desktop") {
+    min-height: 984px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 357px;
+    border-radius: 0 0 32px 32px;
+    background: var(--color-primary);
+    content: "";
+    visibility: hidden;
+
+    @include media(">tablet") {
+      visibility: visible;
+    }
+  }
+
+  .main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include media(">tablet") {
+      gap: 126px;
+    }
+  }
+}
