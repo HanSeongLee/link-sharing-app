@@ -20,6 +20,7 @@
     "@types/classnames": "^2.3.1",
     "aws-sdk": "^2.1469.0",
     "bcrypt-ts": "^4.0.0",
+    "browser-image-compression": "^2.0.2",
     "include-media": "^1.4.10",
     "mime-types": "^2.1.35",
     "mustache": "^4.2.0",
