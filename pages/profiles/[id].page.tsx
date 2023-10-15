@@ -7,10 +7,14 @@ import { createGlobalStyle } from 'styled-components';
 import { ISocialLink } from 'types/social-link';
 import { IUserProfile } from 'types/user-profile';
 import prisma from 'lib/prisma';
+import Head from 'next/head';
 
 const ProfilesPage = ({ userProfile }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     return (
         <>
+            <Head>
+                <title>{`${userProfile.firstName} ${userProfile.lastName}`} | devlinks</title>
+            </Head>
             <GlobalStyles />
             <Space className={styles.page}
                    responsiveGap={{
