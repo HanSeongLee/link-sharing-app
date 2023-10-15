@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import Space from './index';
 
@@ -15,7 +15,7 @@ export default meta;
 
 type Story = StoryObj<typeof Space>;
 
-const Box: React.FC = ({ children, ...props }) => {
+const Box: React.FC<HTMLAttributes<HTMLDivElement>> = ({ children, ...props }) => {
     return (
         <div {...props}
              style={{

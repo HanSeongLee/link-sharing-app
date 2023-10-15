@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Icon from 'components/commons/Icon';
 import { IMessage } from 'types/message';
 
-interface IProps extends HTMLAttributes<HTMLDivElement>, IMessage {
+interface IProps extends Omit<HTMLAttributes<HTMLDivElement>, 'content'>, IMessage {
 
 }
 

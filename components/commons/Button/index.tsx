@@ -11,6 +11,7 @@ interface IProps<T extends ElementType = 'button' | 'a'> {
     alt?: string;
     type?: string;
     disabled?: boolean;
+    children?: React.ReactNode;
 }
 
 const Button: React.FC<IProps> = ({
