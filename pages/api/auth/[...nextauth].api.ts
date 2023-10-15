@@ -33,6 +33,7 @@ export const authOptions = {
                     return {
                         id: user.id,
                         email: user.email,
+                        name: user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : undefined,
                         emailVerified: user.emailVerified,
                     };
                 }
@@ -75,6 +76,7 @@ export const authOptions = {
                 return {
                     id: newUser.id,
                     email: newUser.email,
+                    name: newUser.firstName && newUser.lastName ? `${newUser.firstName} ${newUser.lastName}` : undefined,
                     emailVerified: newUser.emailVerified,
                 };
             },
@@ -106,6 +108,7 @@ export const authOptions = {
                 user: {
                     id: user.id,
                     email: user.email,
+                    name: user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : undefined,
                     emailVerified: user.emailVerified,
                 }
             };

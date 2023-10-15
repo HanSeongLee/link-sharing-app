@@ -2,6 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import EditorHeader from 'components/commons/EditorHeader';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
+import { useMessage } from 'hooks/useMessage';
 
 interface IProp extends HTMLAttributes<HTMLDivElement> {
 
@@ -23,6 +24,7 @@ const EditorHeaderContainer: React.FC<IProp> = ({ children, ...props }) => {
             label: 'Profile Details',
         },
     ];
+    const [messageApi, contextHolder] = useMessage();
 
     const handleTabChange = (key: string) => {
         router.push({
@@ -40,7 +42,14 @@ const EditorHeaderContainer: React.FC<IProp> = ({ children, ...props }) => {
             return ;
         }
 
-        const { id } = session.user;
+        const { id, name } = session.user;
+        if (!name) {
+            messageApi.errorMessage({
+                content: 'Please set your name first.',
+            });
+            return;
+        }
+
         router.push(`/profiles/${id}`);
     };
 
@@ -50,6 +59,7 @@ const EditorHeaderContainer: React.FC<IProp> = ({ children, ...props }) => {
 
     return (
         <div {...props}>
+            {contextHolder}
             <EditorHeader activeTabKey={tab as string}
                        onChangeTab={handleTabChange}
                        tabItems={tabItems}

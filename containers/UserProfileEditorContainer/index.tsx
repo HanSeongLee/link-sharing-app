@@ -25,7 +25,7 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
 const UserProfileEditorContainer: React.FC<IProps> = ({ userProfile, ...props }) => {
     const router = useRouter();
     const { tab } = router.query;
-    const { data: session } = useSession();
+    const { data: session, update } = useSession();
     const { data, error, isLoading, mutate } = useSWR<IUserProfile>(session?.user.id ? `/api/users/${session?.user.id}` : null, fetcher, {
         revalidateIfStale: false,
         revalidateOnFocus: false,
@@ -140,6 +140,7 @@ const UserProfileEditorContainer: React.FC<IProps> = ({ userProfile, ...props })
             });
 
             await mutate({ ...response });
+            await update();
             userProfileDetailsForm.reset({
                 image: '',
                 firstName: response?.firstName || '',
