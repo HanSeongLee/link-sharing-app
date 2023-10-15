@@ -22,6 +22,7 @@ const SocialButton: React.FC<IProps> = ({
                backgroundColor: SOCIAL_LINKS[platform].color,
            }}
            href={link}
+           target={'_blank'}
            {...props}
         >
             <Icon name={platform}
