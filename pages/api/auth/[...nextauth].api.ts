@@ -24,6 +24,10 @@ export const authOptions = {
                     },
                 });
 
+                if (!user) {
+                    throw new Error('Invalid email or password');
+                }
+
                 const verifiedPassword = await verifyPassword(password, user?.password || '');
                 if (user && verifiedPassword) {
                     return {
