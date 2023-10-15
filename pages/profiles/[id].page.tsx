@@ -1,4 +1,5 @@
 import type { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import React from 'react';
 import styles from './style.module.scss';
 import Space from 'components/commons/Space';
 import ProfileHeader from 'components/commons/ProfileHeader';
@@ -14,6 +15,9 @@ const ProfilesPage = ({ userProfile }: InferGetServerSidePropsType<typeof getSer
         <>
             <Head>
                 <title>{`${userProfile.firstName} ${userProfile.lastName}`} | devlinks</title>
+                <meta property="og:title"
+                      content={`${userProfile.firstName} ${userProfile.lastName} | devlinks`}
+                />
             </Head>
             <GlobalStyles />
             <Space className={styles.page}
