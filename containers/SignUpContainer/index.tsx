@@ -9,6 +9,7 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
 
 const SignUpContainer: React.FC<IProps> = ({ className, ...props }) => {
     const [error, setError] = useState<string>('');
+    const [loading, setLoading] = useState<boolean>(false);
     const router = useRouter();
 
     const onSubmit = async (data: {
@@ -17,6 +18,7 @@ const SignUpContainer: React.FC<IProps> = ({ className, ...props }) => {
         confirmPassword: string;
     }) => {
         setError('');
+        setLoading(true);
 
         const { email, password } = data;
         const response = await signIn('sign-up', {
@@ -29,6 +31,7 @@ const SignUpContainer: React.FC<IProps> = ({ className, ...props }) => {
             router.push('/');
         } else {
             setError(response.error);
+            setLoading(false);
         }
     };
 
@@ -38,6 +41,7 @@ const SignUpContainer: React.FC<IProps> = ({ className, ...props }) => {
         >
             <SignUpForm onSubmit={onSubmit}
                         alert={error}
+                        loading={loading}
             />
         </div>
     );

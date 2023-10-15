@@ -15,9 +15,10 @@ interface IProps extends Omit<FormHTMLAttributes<HTMLFormElement>, 'onSubmit'> {
         password: string;
     }) => void;
     alert: string;
+    loading: boolean;
 }
 
-const LoginForm: React.FC<IProps> = ({ onSubmit, ...props }) => {
+const LoginForm: React.FC<IProps> = ({ onSubmit, loading, ...props }) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
             email: '',
@@ -68,7 +69,9 @@ const LoginForm: React.FC<IProps> = ({ onSubmit, ...props }) => {
                     />
                 </Space>
 
-                <Button type={'submit'}>
+                <Button type={'submit'}
+                        disabled={loading}
+                >
                     Login
                 </Button>
 

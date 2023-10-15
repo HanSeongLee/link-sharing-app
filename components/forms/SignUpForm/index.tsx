@@ -17,9 +17,10 @@ interface IProps extends Omit<FormHTMLAttributes<HTMLFormElement>, 'onSubmit'> {
         confirmPassword: string;
     }) => void;
     alert: string;
+    loading: boolean;
 }
 
-const SignUpForm: React.FC<IProps> = ({ onSubmit, className, ...props }) => {
+const SignUpForm: React.FC<IProps> = ({ onSubmit, loading, className, ...props }) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm({
         defaultValues: {
             email: '',
@@ -96,7 +97,9 @@ const SignUpForm: React.FC<IProps> = ({ onSubmit, className, ...props }) => {
                     Password must contain at least 8 characters
                 </Paragraph>
 
-                <Button type={'submit'}>
+                <Button type={'submit'}
+                        disabled={loading}
+                >
                     Create new account
                 </Button>
 
