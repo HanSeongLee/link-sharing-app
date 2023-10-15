@@ -7,6 +7,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from 'pages/api/auth/[...nextauth].api';
 import EmailVerificationContainer from 'containers/EmailVerificationContainer';
 import axios from 'axios';
+import prisma from 'lib/prisma';
 
 const EmailVerificationPage = ({ expires }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     return (
