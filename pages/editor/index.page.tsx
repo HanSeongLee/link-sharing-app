@@ -63,7 +63,7 @@ export const getServerSideProps = (async (context) => {
         },
     });
 
-    if (!user || !user.firstName || !user.lastName || !user.email) {
+    if (!user || !user.email) {
         return {
             notFound: true,
         };
@@ -74,8 +74,8 @@ export const getServerSideProps = (async (context) => {
             userProfile: {
                 id: user.id,
                 image: user.image || '',
-                firstName: user.firstName,
-                lastName: user.lastName,
+                firstName: user.firstName || '',
+                lastName: user.lastName || '',
                 email: user.email,
                 socialLinks: user.socialLinks as unknown as ISocialLink[] || [],
             },
