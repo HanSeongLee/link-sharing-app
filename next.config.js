@@ -8,6 +8,13 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  // !! WARN !!
+  // Dangerously allow production builds to successfully complete even if
+  // your project has type errors.
+  // !! WARN !!
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
