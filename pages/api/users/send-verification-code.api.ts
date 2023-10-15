@@ -7,6 +7,7 @@ import prisma from 'lib/prisma';
 import { generateVerificationCode } from 'lib/utils';
 import { promises as fs } from 'fs';
 import mustache from 'mustache';
+import * as path from 'path';
 
 async function handler(
     req: NextApiRequest,
@@ -46,7 +47,9 @@ async function handler(
         },
     });
 
-    const html = await fs.readFile(process.cwd() + '/templates/email/email-verification-code.hbs', 'utf-8');
+    const templateDirectoryPath = path.resolve(process.cwd(), 'templates/email');
+    const templatePath = path.join(templateDirectoryPath, 'email-verification-code.hbs');
+    const html = await fs.readFile(templatePath, 'utf-8');
     const emailContents = mustache.render(html.toString(), {
         url: process.env.NEXT_PUBLIC_URL,
         verificationCode: code,
