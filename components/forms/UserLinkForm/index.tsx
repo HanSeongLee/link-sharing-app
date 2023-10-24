@@ -75,9 +75,9 @@ const UserLinkForm: React.FC<IProps> = ({ onSubmit, loading = false, className, 
                                     </Label>
                                     <Controller control={control}
                                                 name={`links.${index}.platform`}
-                                                render={({ field }) => (
+                                                render={({ field: { ref, ...props } }) => (
                                                     <Select id={`links.${index}.platform`}
-                                                            defaultValue={field.value || 'github'}
+                                                            defaultValue={props.value || 'github'}
                                                             options={Object.keys(SOCIAL_LINKS)
                                                                 .map((key) => {
                                                                     return {
@@ -86,7 +86,7 @@ const UserLinkForm: React.FC<IProps> = ({ onSubmit, loading = false, className, 
                                                                         iconName: key as IconName,
                                                                     };
                                                                 })}
-                                                            {...field}
+                                                            {...props}
 
                                                     />
                                                 )}
