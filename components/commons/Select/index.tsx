@@ -42,6 +42,7 @@ const Select: React.FC<IProps> = ({
                            onClickAway={close}
         >
             <Input className={styles.input}
+                   name={props?.id}
                    icon={currentOption?.iconName ? {
                        name: currentOption.iconName,
                        color: 'grey',

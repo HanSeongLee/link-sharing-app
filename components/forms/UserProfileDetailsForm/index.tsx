@@ -75,6 +75,7 @@ const UserProfileDetailsForm: React.FC<IProps> = ({ onSubmit, loading = false, c
                                    required: ERROR_MESSAGES.REQUIRE_FILED,
                                })}
                                error={errors.firstName?.message}
+                               autoComplete={'cc-given-name'}
                         />
                     </Space>
                     <Space className={styles.field}
@@ -94,13 +95,15 @@ const UserProfileDetailsForm: React.FC<IProps> = ({ onSubmit, loading = false, c
                                    required: ERROR_MESSAGES.REQUIRE_FILED,
                                })}
                                error={errors.lastName?.message}
+                               autoCapitalize={'cc-family-name'}
                         />
                     </Space>
                     <Space className={styles.field}
                            gap={4}
                     >
                         <Label className={styles.label}
-                               htmlFor={'email'}>
+                               htmlFor={'email'}
+                        >
                             Email
                         </Label>
                         <Input className={styles.input}
@@ -109,6 +112,7 @@ const UserProfileDetailsForm: React.FC<IProps> = ({ onSubmit, loading = false, c
                                placeholder={'e.g. email@example.com'}
                                readOnly
                                {...register('email')}
+                               autoComplete={'email'}
                         />
                     </Space>
                 </Space>

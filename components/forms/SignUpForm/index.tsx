@@ -52,6 +52,7 @@ const SignUpForm: React.FC<IProps> = ({ onSubmit, loading, className, ...props }
                                required: ERROR_MESSAGES.REQUIRE_FILED,
                            })}
                            error={errors.email?.message}
+                           autoComplete={'email'}
                     />
                 </Space>
                 <Space gap={4}>
