@@ -111,8 +111,9 @@ const UserProfileDetailsForm: React.FC<IProps> = ({ onSubmit, loading = false, c
                                type={'email'}
                                placeholder={'e.g. email@example.com'}
                                readOnly
-                               {...register('email')}
+                               value={defaultValues?.email || ''}
                                autoComplete={'email'}
+                               disabled
                         />
                     </Space>
                 </Space>
