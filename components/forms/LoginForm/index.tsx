@@ -67,6 +67,7 @@ const LoginForm: React.FC<IProps> = ({ onSubmit, loading, ...props }) => {
                                required: ERROR_MESSAGES.REQUIRE_FILED,
                            })}
                            error={errors.password?.message}
+                           autoComplete={'password'}
                     />
                 </Space>
 

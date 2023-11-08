@@ -75,6 +75,7 @@ const SignUpForm: React.FC<IProps> = ({ onSubmit, loading, className, ...props }
                                }
                            })}
                            error={errors.password?.message}
+                           autoComplete={'new-password'}
                     />
                 </Space>
                 <Space gap={4}>
@@ -91,6 +92,7 @@ const SignUpForm: React.FC<IProps> = ({ onSubmit, loading, className, ...props }
                            {...register('confirmPassword', {
                                required: ERROR_MESSAGES.REQUIRE_FILED,
                            })}
+                           autoComplete={'off'}
                     />
                 </Space>
 
