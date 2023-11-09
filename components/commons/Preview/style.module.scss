@@ -45,6 +45,9 @@
     color: var(--color-dark-grey);
     background-color: var(--color-white);
     text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .email {

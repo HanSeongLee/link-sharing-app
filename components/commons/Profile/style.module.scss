@@ -19,4 +19,11 @@
     gap: 20px;
     list-style: none;
   }
+
+  .name {
+    max-width: 240px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }

@@ -34,11 +34,12 @@ const Profile: React.FC<IProps> = ({
                        align={'center'}
                 >
                     {(firstName && lastName) && (
-                        <Title level={1}
-                           size={'large'}
-                    >
-                        {firstName} {lastName}
-                    </Title>
+                        <Title className={styles.name}
+                               level={1}
+                               size={'large'}
+                        >
+                            {firstName} {lastName}
+                        </Title>
                     )}
                     {email && (
                         <Paragraph>
